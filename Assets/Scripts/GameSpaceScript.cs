@@ -50,4 +50,9 @@ public class GameSpaceScript : MonoBehaviour {
         spaceMaterial.color = spaceColor;
     }
 
+    public void PlayerStopped(PlayerScript player)
+    {
+        print("Player landed");
+    }
+
 }
