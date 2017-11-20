@@ -19,27 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4106976808608596}
+  - component: {fileID: 33784467082063276}
+  - component: {fileID: 136281483485900132}
+  - component: {fileID: 23667074900493270}
+  - component: {fileID: 195704360562752356}
   - component: {fileID: 114889871545759274}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1244634334703446
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4924062475844098}
-  - component: {fileID: 33767449388585500}
-  - component: {fileID: 136927021522511596}
-  - component: {fileID: 23130612026451528}
-  - component: {fileID: 54687390895608816}
-  - component: {fileID: 195219365797839220}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -54,32 +38,18 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1165126392688804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: 0.92, z: 0}
+  m_LocalPosition: {x: -1.996, y: 0.598, z: 1.35}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children:
-  - {fileID: 4924062475844098}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4924062475844098
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244634334703446}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4106976808608596}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23130612026451528
+--- !u!23 &23667074900493270
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244634334703446}
+  m_GameObject: {fileID: 1165126392688804}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -105,28 +75,13 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33767449388585500
+--- !u!33 &33784467082063276
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244634334703446}
+  m_GameObject: {fileID: 1165126392688804}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54687390895608816
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244634334703446}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &114889871545759274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,14 +93,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6f2c279b8b607448d0f68eec8207b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceThreshold: 0.2
+  distanceThreshold: 0.1
   currentGameSpace: {fileID: 0}
---- !u!136 &136927021522511596
+--- !u!136 &136281483485900132
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244634334703446}
+  m_GameObject: {fileID: 1165126392688804}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -153,16 +108,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &195219365797839220
+--- !u!195 &195704360562752356
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244634334703446}
+  m_GameObject: {fileID: 1165126392688804}
   m_Enabled: 1
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 40
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

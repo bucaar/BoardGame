@@ -37,8 +37,8 @@ public class PlayerScript : MonoBehaviour {
     
 	void Start () {
         //get the components
-        myMaterial = transform.GetChild(0).GetComponent<Renderer>().material;
-        myAgent = transform.GetChild(0).GetComponent<NavMeshAgent>();
+        myMaterial = GetComponent<Renderer>().material;
+        myAgent = GetComponent<NavMeshAgent>();
 
         //assign our id
         myId = id++;
@@ -62,13 +62,13 @@ public class PlayerScript : MonoBehaviour {
         if(moving && myAgent.remainingDistance < distanceThreshold)
         {
             //get the script for the current space, we will either be moving or notifying that we are done moving
-            GameSpaceScript currentGameSpaceScript = currentGameSpace.GetComponent<GameSpaceScript>();
+            AbstractGameSpace currentGameSpaceScript = currentGameSpace.GetComponent<AbstractGameSpace>();
 
             //if we still have spaces to move
             if (spacesLeftToMove > 0)
             {
                 //see the possible next spaces to go to
-                GameObject[] nextSpaces = currentGameSpaceScript.next;
+                GameObject[] nextSpaces = currentGameSpaceScript.nextPossibleSpaces;
                 if (nextSpaces.Length > 0)
                 {
                     //TODO: give the user a choice on which path to take
@@ -87,7 +87,7 @@ public class PlayerScript : MonoBehaviour {
             {
                 //we are moving, remaining distance is small, and no more spaces to move.
                 //that means we are done moving!
-                currentGameSpaceScript.PlayerStopped(this);
+                currentGameSpaceScript.PlayerLanded(this);
                 moving = false;
             }
         }
